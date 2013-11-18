@@ -125,7 +125,7 @@ namespace Ude.Core
                 
         public override void DumpStatus()
         {
-            Console.WriteLine("  SBCS: {0} [{1}]", GetConfidence(), 
+            Console.Error.WriteLine("  SBCS: {0} [{1}]", GetConfidence(), 
                 GetCharsetName());
         }
 

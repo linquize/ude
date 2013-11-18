@@ -137,15 +137,15 @@ namespace Ude.Core
         public override void DumpStatus()
         {
             float cf = GetConfidence();
-            Console.WriteLine(" SBCS Group Prober --------begin status");
+            Console.Error.WriteLine(" SBCS Group Prober --------begin status");
             for (int i = 0; i < PROBERS_NUM; i++) {
                 if (!isActive[i])
-                    Console.WriteLine(" inactive: [{0}] (i.e. confidence is too low).", 
+                    Console.Error.WriteLine(" inactive: [{0}] (i.e. confidence is too low).", 
                            probers[i].GetCharsetName());
                 else
                     probers[i].DumpStatus();
             }
-            Console.WriteLine(" SBCS Group found best match [{0}] confidence {1}.",  
+            Console.Error.WriteLine(" SBCS Group found best match [{0}] confidence {1}.",  
                 probers[bestGuess].GetCharsetName(), cf);
         }
 

@@ -97,10 +97,10 @@ namespace Ude.Tests
                 
             foreach (string file in files) {
                 using (FileStream fs = new FileStream(file, FileMode.Open)) {
-                    Console.WriteLine("Analysing {0}", file);                    
+                    Console.Error.WriteLine("Analysing {0}", file);                    
                     detector.Feed(fs);
                     detector.DataEnd();
-                    Console.WriteLine("{0} : {1} {2}", 
+                    Console.Error.WriteLine("{0} : {1} {2}", 
                             file, detector.Charset, detector.Confidence);
                     Assert.AreEqual(charset, detector.Charset);
                     detector.Reset();
